@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>母親節快樂</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 2rem;
+      background: linear-gradient(to bottom right, #ffe5ec, #fff1f3),
+                  url('https://cdn.pixabay.com/photo/2017/01/31/21/22/roses-2023430_1280.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+    }
+    h1 {
+      color: #b20032;
+      font-size: 2.5rem;
+      animation: fadeIn 2s ease-out;
+      text-shadow: 1px 1px #fff;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #444;
+      margin-top: 0.5rem;
+      animation: fadeIn 2.5s ease-out;
+      background: rgba(255,255,255,0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 12px;
+    }
+    img {
+      max-width: 300px;
+      margin-top: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+      animation: fadeIn 3s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* 花瓣樣式 */
+    .petal {
+      position: absolute;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background-image: url('https://cdn-icons-png.flaticon.com/512/3533/3533905.png');
+      background-size: cover;
+      opacity: 0.8;
+      animation: fall 10s linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>麻麻～妳是世界上最可愛的超人！今天妳最大，愛妳呦～💕</h1>
+  <p>妳是我一輩子的避風港，謝謝妳從未缺席我的人生。母親節快樂！</p>
+  <img src="https://cdn.pixabay.com/photo/2016/04/05/03/52/rose-1302142_960_720.jpg" alt="紅玫瑰插畫">
+
+  <!-- JavaScript 產生花瓣 -->
+  <script>
+    const count = 30;
+    for (let i = 0; i < count; i++) {
+      const petal = document.createElement('span');
+      petal.className = 'petal';
+      petal.style.left = Math.random() * 100 + 'vw';
+      petal.style.animationDelay = Math.random() * 10 + 's';
+      petal.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(petal);
+    }
+  </script>
+</body>
+</html>
